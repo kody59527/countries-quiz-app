@@ -1,121 +1,121 @@
 const STORE = [
     {
-        question: '' ,
+        question: 'Which of the following European countries is the smallest by area?',
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'France', 
+        'United Kingdom', 
+        'Germany', 
+        'Norway'
         ],
-        correctAnswer: '',
+        correctAnswer: 'United Kingdom',
         //flagImg: 'https://i.imgur.com/h9xEeq2.png',
         //alt: 'The flag of the United Kingdom'
     },
     {
-        question: '' ,
+        question: 'Which Asian country is nicknamed "the Land of the Morning Calm" for its mountainous scenery and clear waters?',
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'China', 
+        'Thailand', 
+        'South Korea', 
+        'Sri Lanka'
         ],
-        correctAnswer: '',
+        correctAnswer: 'South Korea',
         //flagImg: 'https://i.imgur.com/uiA4Bcr.png',
         //alt: 'The flag of South Korea'
     },
     {
-        question: '' ,
+        question: 'Which European country holds the oldest university in the world?' ,
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'United Kingdom', 
+        'Greece', 
+        'Italy', 
+        'Sweden'
         ],
-        correctAnswer: '',
+        correctAnswer: 'Italy',
         //flagImg: 'https://i.imgur.com/Z1A0p5u.png',
         //alt: 'The flag of Italy'
     },
     {
-        question: '' ,
+        question: 'Which of the following countries has no minimum legal drinking age restriction?',
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'Indonesia', 
+        'Portugal', 
+        'Brazil', 
+        'Cuba'
         ],
-        correctAnswer: '',
+        correctAnswer: 'Indonesia',
         //flagImg: 'https://i.imgur.com/utqGIyq.png',
         //alt: 'The flag of Indonesia'
     },
     {
-        question: '' ,
+        question: 'Which of the following African countries has the fastest growing rate?',
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'Uganda', 
+        'Senegal', 
+        'Ghana', 
+        'Kenya'
         ],
-        correctAnswer: '',
+        correctAnswer: 'Kenya',
         //flagImg: 'https://i.imgur.com/ENiEaCi.png',
         //alt: 'The flag of Kenya'
     },
     {
-        question: '' ,
+        question: 'Which former country divided into two countries peacefully in 1993?',
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'Benin', 
+        'Czechoslovakia', 
+        'Germany', 
+        'Croatia'
         ],
-        correctAnswer: '',
+        correctAnswer: 'Czechoslovakia',
         //flagImg: 'https://i.imgur.com/tdZemW2.png',
         //alt: 'The flag of Czechoslovakia'
     },
     {
-        question: '' ,
+        question: 'Which of the following counties has the highest life expectancy in the world?',
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'Italy', 
+        'Singapore', 
+        'Switzerland', 
+        'Canada'
         ],
-        correctAnswer: '',
+        correctAnswer: 'Singapore',
         //flagImg: 'https://i.imgur.com/GME7niX.png',
         //alt: 'The flag of Singapore'
     },
     {
-        question: '' ,
+        question: 'Which country has the worst traffic in the world?',
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'Thailand', 
+        'United States', 
+        'Russia', 
+        'Turkey'
         ],
-        correctAnswer: '',
+        correctAnswer: 'Thailand',
         //flagImg: 'https://i.imgur.com/Xh5OgE6.png',
         //alt: 'The flag of Thailand'
     },
     {
-        question: '' ,
+        question: 'Which country speaks the most languages in the world?',
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'India', 
+        'Brazil', 
+        'United States', 
+        'Papua New Guinea'
         ],
-        correctAnswer: '',
+        correctAnswer: 'Papua New Guinea',
         //flagImg: 'https://i.imgur.com/Wt8L8HY.png',
         //alt: 'The flag of Papua New Guinea'
     },
     {
-        question: '' ,
+        question: 'Which of the following countries have the most islands in the world?' ,
         answers: [
-        '', 
-        '', 
-        '', 
-        ''
+        'The Philippines', 
+        'Sweden', 
+        'Greece', 
+        'Japan'
         ],
-        correctAnswer: '',
+        correctAnswer: 'Sweden',
         //flagImg: 'https://i.imgur.com/3Cz8act.png',
         //alt: 'The flag of Sweden'
     },
