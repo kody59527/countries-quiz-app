@@ -1,7 +1,7 @@
 const STORE = [
     {
         question: 'Which of the following European countries is the smallest by area?',
-        answers: [
+        choices: [
         'France', 
         'United Kingdom', 
         'Germany', 
@@ -13,7 +13,7 @@ const STORE = [
     },
     {
         question: 'Which Asian country is nicknamed "the Land of the Morning Calm" for its mountainous scenery and clear waters?',
-        answers: [
+        choices: [
         'China', 
         'Thailand', 
         'South Korea', 
@@ -25,7 +25,7 @@ const STORE = [
     },
     {
         question: 'Which European country holds the oldest university in the world?' ,
-        answers: [
+        choices: [
         'United Kingdom', 
         'Greece', 
         'Italy', 
@@ -37,7 +37,7 @@ const STORE = [
     },
     {
         question: 'Which of the following countries has no minimum legal drinking age restriction?',
-        answers: [
+        choices: [
         'Indonesia', 
         'Portugal', 
         'Brazil', 
@@ -49,7 +49,7 @@ const STORE = [
     },
     {
         question: 'Which of the following African countries has the fastest growing rate?',
-        answers: [
+        choices: [
         'Uganda', 
         'Senegal', 
         'Ghana', 
@@ -61,7 +61,7 @@ const STORE = [
     },
     {
         question: 'Which former country divided into two countries peacefully in 1993?',
-        answers: [
+        choices: [
         'Benin', 
         'Czechoslovakia', 
         'Germany', 
@@ -73,7 +73,7 @@ const STORE = [
     },
     {
         question: 'Which of the following counties has the highest life expectancy in the world?',
-        answers: [
+        choices: [
         'Italy', 
         'Singapore', 
         'Switzerland', 
@@ -85,7 +85,7 @@ const STORE = [
     },
     {
         question: 'Which country has the worst traffic in the world?',
-        answers: [
+        choices: [
         'Thailand', 
         'United States', 
         'Russia', 
@@ -97,7 +97,7 @@ const STORE = [
     },
     {
         question: 'Which country speaks the most languages in the world?',
-        answers: [
+        choices: [
         'India', 
         'Brazil', 
         'United States', 
@@ -109,7 +109,7 @@ const STORE = [
     },
     {
         question: 'Which of the following countries have the most islands in the world?' ,
-        answers: [
+        choices: [
         'The Philippines', 
         'Sweden', 
         'Greece', 
