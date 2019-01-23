@@ -34,21 +34,87 @@ function createQuestion() {
     }
 }
 
-function addCorrect() {
-    correctNumber++;
+function renderQuestion() {
+    $('.quizForm').html(nextQuestion());
 }
 
 function nextQuestion() {
     if (questionNumber < STORE.length) {
         $('.questionNumber').text(questionNumber + 1);
         questionNumber++;
+    }
 }
 
+function startQuiz() {
+    $('.homePage').on('click', event => {
+        $('.homePage').remove();
+        $('.quizForm').css('display', 'block');
+        $('.questionNumber').text(1);
+    });
+}
+
+function addCorrect() {
+    correctNumber++;
+}
+
+function selectedAnswer() {
+    $('form').on('submit', function(e) {
+        e.preventDefault();
+        let userAnswer = selected.val();
+        let selection = $('input:checked');
+        let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
+        if (userAnswer === correctAnswer) {
+            selected.parent().addClass('correct');
+            userCorrectAnswer();
+        } else {
+            selected.parent().addClass('incorrect');
+            userIncorrectAnswer();
+        }
+    });
+}
+
+function renderCorrectNumber() {
+    addCorrect();
+    $('.correctNumber').text(correctNumber);
+}
+
+function userCorrectAnswer() {
+    renderCorrectNumber();
+    $('.quizForm').html(`<div class="correctResult">
+        <div class="flag">
+            <img src="${STORE[questionNumber].flagImg}" alt="${STORE[questionNumber].alt}"/></div>
+            <p>You are Correct!</p>
+            <button type=button class="continue">Continue</button>
+        </div>`);
+}
+
+function userIncorrectAnswer() {
+    $('.quizForm').html(`<div class="correctResult">
+    <div class="flag">
+        <img src="${STORE[questionNumber].flagImg}" alt="${STORE[questionNumber].alt}"/></div>
+        <p>Sorry, that's incorrect. The correct answer was ${correctAnswer}</p>
+        <button type=button class="continue">Continue</button>
+    </div>`);
+}
 
 function endResults() {
-
+    $('.quizForm').html(`<div class="results correctResult>
+        <p>You got ${correctNumber} right!</p>
+        <p>Thank you for playing!</p>
+        <button class="reset">Reset Quiz</button>/<div>`);
 }
 
 function startOver() {
+    $('main').on('click', '.reset', function(e) {
+        location.reload();
+    });
+}
+
+function makeQuiz() {
+    startQuiz();
+    renderQuestion();
+    selectedAnswer();
 
 }
+
+$(makeQuiz);
