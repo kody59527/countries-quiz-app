@@ -6,10 +6,17 @@ html {
     box-sizing: inherit;
 }
 
+.homeLink img {
+    display: block;
+    width: 5%;
+    height: 5%;
+    margin: auto;
+}
+
 .quizForm {
     display: none;
 }
 
-/* body {
+body {
     font-family: 'Montserrat', sans-serif;
-} --> */
+}  
