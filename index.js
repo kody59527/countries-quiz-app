@@ -45,6 +45,12 @@ function nextQuestion() {
     }
 }
 
+function startNextQuestion() {
+    nextQuestion();
+    renderQuestion();
+    selectedAnswer();
+}
+
 function startQuiz() {
     $('.homePage').on('click', event => {
         $('.homePage').remove();
@@ -114,7 +120,7 @@ function makeQuiz() {
     startQuiz();
     renderQuestion();
     selectedAnswer();
-
+    startNextQuestion();
 }
 
 $(makeQuiz);
