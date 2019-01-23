@@ -2,9 +2,10 @@ let questionNumber = 0;
 let correctNumber = 0;
 
 function createQuestion() {
+    console.log('createQuestion ran');
     if (questionNumber < STORE.length) {
         return `<div class='question${questionNumber}'>
-            <h2 class='questionTitle'>Question ${questionNumber}</h2>
+            <h2 class='questionTitle'>${STORE[questionNumber].question}</h2>
             <form>
                 <fieldset>
                     <label class='answerChoice'>
@@ -35,22 +36,26 @@ function createQuestion() {
 }
 
 function renderQuestion() {
+    console.log('renderQuestion ran');
     $('.quizForm').html(createQuestion());
 }
 
 function nextQuestion() {
+    console.log('nextQuestion ran');
     $('.questionNumber').text(questionNumber + 1);
     questionNumber++;
 }
 
 function startNextQuestion() {
+    console.log('startNextQuestion ran');
     nextQuestion();
     renderQuestion();
     selectedAnswer();
 }
 
 function startQuiz() {
-    $('.homePage').on('click', event => {
+    console.log('startQuiz ran');
+    $('.homePage').on('click', '.buttonStart', event => {
         $('.homePage').remove();
         $('.quizForm').css('display', 'block');
         $('.questionNumber').text(1);
@@ -58,10 +63,12 @@ function startQuiz() {
 }
 
 function addCorrect() {
+    console.log('addCorrect ran');
     correctNumber++;
 }
 
 function selectedAnswer() {
+    console.log('selectedAnswer ran');
     $('form').on('submit', function(e) {
         e.preventDefault();
         let userAnswer = selected.val();
@@ -78,11 +85,13 @@ function selectedAnswer() {
 }
 
 function renderCorrectNumber() {
+    console.log('renderCorrectNumber ran');
     addCorrect();
     $('.correctNumber').text(correctNumber);
 }
 
 function userCorrectAnswer() {
+    console.log('userCorrectAnswer ran');
     renderCorrectNumber();
     $('.quizForm').html(`<div class="correctResult">
         <div class="flag">
@@ -93,6 +102,7 @@ function userCorrectAnswer() {
 }
 
 function userIncorrectAnswer() {
+    console.log('userIncorrectAnswer ran');
     $('.quizForm').html(`<div class="correctResult">
     <div class="flag">
         <img src="${STORE[questionNumber].flagImg}" alt="${STORE[questionNumber].alt}"/></div>
@@ -102,6 +112,7 @@ function userIncorrectAnswer() {
 }
 
 function endResults() {
+    console.log('endResults ran');
     $('.quizForm').html(`<div class="results correctResult>
         <p>You got ${correctNumber} right!</p>
         <p>Thank you for playing!</p>
@@ -109,13 +120,14 @@ function endResults() {
 }
 
 function startOver() {
+    console.log('startOver ran');
     $('main').on('click', '.reset', function(e) {
         location.reload();
     });
 }
 
 function makeQuiz() {
-    startQuiz();
+    console.log('makeQuiz ran');
     renderQuestion();
     selectedAnswer();
     startNextQuestion();
