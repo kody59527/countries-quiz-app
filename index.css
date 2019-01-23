@@ -6,6 +6,10 @@ html {
     box-sizing: inherit;
 }
 
+.quizForm {
+    display: none;
+}
+
 /* body {
     font-family: 'Montserrat', sans-serif;
 } --> */

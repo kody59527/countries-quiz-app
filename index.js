@@ -24,7 +24,7 @@ function createQuestion() {
                         <input type='radio' value='${STORE[questionNumber].choices[3]}' name='choice' required>
                         <span>${STORE[questionNumber].choices[3]}</span>
                     </label>
-                    <button type='button' class='submitButton'>Submit</button>
+                    <input type='submit' class='submitButton' value='Submit'>
                 </fieldset>
             </form>
         </div>`;
@@ -42,15 +42,17 @@ function renderQuestion() {
 
 function nextQuestion() {
     console.log('nextQuestion ran');
-    $('.questionNumber').text(questionNumber + 1);
     questionNumber++;
+    $('.questionNumber').text(questionNumber + 1);
 }
 
 function startNextQuestion() {
     console.log('startNextQuestion ran');
+    $('main').on('click', '.continue', function(e) {
     nextQuestion();
     renderQuestion();
     selectedAnswer();
+    });
 }
 
 function startQuiz() {
@@ -67,12 +69,18 @@ function addCorrect() {
     correctNumber++;
 }
 
+function renderCorrectNumber() {
+    console.log('renderCorrectNumber ran');
+    addCorrect();
+    $('.correctNumber').text(correctNumber);
+}
+
 function selectedAnswer() {
     console.log('selectedAnswer ran');
     $('form').on('submit', function(e) {
         e.preventDefault();
+        let selected = $('input:checked');
         let userAnswer = selected.val();
-        let selection = $('input:checked');
         let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
         if (userAnswer === correctAnswer) {
             selected.parent().addClass('correct');
@@ -84,15 +92,10 @@ function selectedAnswer() {
     });
 }
 
-function renderCorrectNumber() {
-    console.log('renderCorrectNumber ran');
-    addCorrect();
-    $('.correctNumber').text(correctNumber);
-}
-
 function userCorrectAnswer() {
     console.log('userCorrectAnswer ran');
     renderCorrectNumber();
+    let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
     $('.quizForm').html(`<div class="correctResult">
         <div class="flag">
             <img src="${STORE[questionNumber].flagImg}" alt="${STORE[questionNumber].alt}"/></div>
@@ -103,6 +106,7 @@ function userCorrectAnswer() {
 
 function userIncorrectAnswer() {
     console.log('userIncorrectAnswer ran');
+    let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
     $('.quizForm').html(`<div class="correctResult">
     <div class="flag">
         <img src="${STORE[questionNumber].flagImg}" alt="${STORE[questionNumber].alt}"/></div>
@@ -113,10 +117,10 @@ function userIncorrectAnswer() {
 
 function endResults() {
     console.log('endResults ran');
-    $('.quizForm').html(`<div class="results correctResult>
+    $('.quizForm').html(`<div class="results correctResult">
         <p>You got ${correctNumber} right!</p>
         <p>Thank you for playing!</p>
-        <button class="reset">Reset Quiz</button>/<div>`);
+        <button class="reset">Reset Quiz</button><div>`);
 }
 
 function startOver() {
@@ -128,6 +132,7 @@ function startOver() {
 
 function makeQuiz() {
     console.log('makeQuiz ran');
+    startQuiz();
     renderQuestion();
     selectedAnswer();
     startNextQuestion();
