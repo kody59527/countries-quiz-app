@@ -35,14 +35,12 @@ function createQuestion() {
 }
 
 function renderQuestion() {
-    $('.quizForm').html(nextQuestion());
+    $('.quizForm').html(createQuestion());
 }
 
 function nextQuestion() {
-    if (questionNumber < STORE.length) {
-        $('.questionNumber').text(questionNumber + 1);
-        questionNumber++;
-    }
+    $('.questionNumber').text(questionNumber + 1);
+    questionNumber++;
 }
 
 function startNextQuestion() {
