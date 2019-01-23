@@ -1,6 +1,6 @@
 let questionNumber = 0;
 let correctNumber = 0;
-
+//creates the question from STORE
 function createQuestion() {
     console.log('createQuestion ran');
     if (questionNumber < STORE.length) {
@@ -74,7 +74,7 @@ function renderCorrectNumber() {
     addCorrect();
     $('.correctNumber').text(correctNumber);
 }
-
+//listens for user selection on question
 function selectedAnswer() {
     console.log('selectedAnswer ran');
     $('form').on('submit', function(e) {
