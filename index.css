@@ -34,7 +34,7 @@ html {
     margin: auto;
 }
 
-.homePage h1 {
+.homePage h1, .questionTitle, .answerResponse, .results {
     text-align: center;
 }
 
@@ -78,4 +78,8 @@ fieldset {
 
 body {
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }  

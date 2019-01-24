@@ -99,7 +99,7 @@ function userCorrectAnswer() {
     $('.quizForm').html(`<div class="correctResult">
         <div class="flag">
             <img src="${STORE[questionNumber].flagImg}" alt="${STORE[questionNumber].alt}"/></div>
-            <p>${correctAnswer} is correct!</p>
+            <p class="answerResponse">${correctAnswer} is correct!</p>
             <button type=button class="continue">Continue</button>
         </div>`);
 }
@@ -110,7 +110,7 @@ function userIncorrectAnswer() {
     $('.quizForm').html(`<div class="correctResult">
     <div class="flag">
         <img src="${STORE[questionNumber].flagImg}" alt="${STORE[questionNumber].alt}"/></div>
-        <p>Sorry, that's incorrect. The correct answer was ${correctAnswer}.</p>
+        <p class="answerResponse">Sorry, that's incorrect. The correct answer was ${correctAnswer}.</p>
         <button type=button class="continue">Continue</button>
     </div>`);
 }
