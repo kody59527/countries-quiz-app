@@ -2,7 +2,6 @@ let questionNumber = 0;
 let correctNumber = 0;
 //creates the question from STORE
 function createQuestion() {
-    console.log('createQuestion ran');
     if (questionNumber < STORE.length) {
         return `<div class='question${questionNumber}'>
             <h2 class='questionTitle'>${STORE[questionNumber].question}</h2>
@@ -29,54 +28,60 @@ function createQuestion() {
             </form>
         </div>`;
     } else {
-        endResults();
         startOver();
-        $('questionNumber').text(10)
+        endResults();
+        questionNumber - 2;
+        $('questionNumber').text(questionNumber);
     }
+    console.log(`'createQuestion ran' ${questionNumber}`);
 }
 
 function renderQuestion() {
-    console.log('renderQuestion ran');
     $('.quizForm').html(createQuestion());
+    console.log(`'renderQuestion ran' ${questionNumber}`);
 }
 
 function nextQuestion() {
-    console.log('nextQuestion ran');
-    questionNumber++;
-    $('.questionNumber').text(questionNumber + 1);
+        questionNumber++;
+        if (questionNumber != 10) {
+            $('.questionNumber').text(questionNumber+1);
+        } else {
+            $('.questionNumber').text(questionNumber);
+        }
+        console.log(`'nextQuestion ran' ${questionNumber}`);
 }
 
 function startNextQuestion() {
-    console.log('startNextQuestion ran');
     $('main').on('click', '.continue', function(e) {
     nextQuestion();
     renderQuestion();
     selectedAnswer();
     });
+    console.log(`'startNextQuestion ran' ${questionNumber}`);
 }
 
 function startQuiz() {
-    console.log('startQuiz ran');
     $('.homePage').on('click', '.buttonStart', event => {
         $('.homePage').remove();
         $('.quizForm').css('display', 'block');
-        $('.questionNumber').text(1);
+        $('.questionNumber').text(questionNumber+1);
+        //$('.questionNumber').text(1);
     });
+    console.log(`'startQuiz ran' ${questionNumber}`);
 }
 
 function addCorrect() {
-    console.log('addCorrect ran');
     correctNumber++;
+    console.log(`'addCorrect ran' ${questionNumber}`);
 }
 
 function renderCorrectNumber() {
-    console.log('renderCorrectNumber ran');
     addCorrect();
     $('.correctNumber').text(correctNumber);
+    console.log(`'renderCorrectNumber ran' ${questionNumber}`);
 }
 //listens for user selection on question
 function selectedAnswer() {
-    console.log('selectedAnswer ran');
     $('form').on('submit', function(e) {
         e.preventDefault();
         let selected = $('input:checked');
@@ -90,10 +95,10 @@ function selectedAnswer() {
             userIncorrectAnswer();
         }
     });
+    console.log(`'selectedAnswer ran' ${questionNumber}`);
 }
 
 function userCorrectAnswer() {
-    console.log('userCorrectAnswer ran');
     renderCorrectNumber();
     let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
     $('.quizForm').html(`<div class="correctResult">
@@ -102,10 +107,10 @@ function userCorrectAnswer() {
             <p class="answerResponse">${correctAnswer} is correct!</p>
             <button type=button class="continue">Continue</button>
         </div>`);
+        console.log(`'userCorrectAnswer ran' ${questionNumber}`);
 }
 
 function userIncorrectAnswer() {
-    console.log('userIncorrectAnswer ran');
     let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
     $('.quizForm').html(`<div class="correctResult">
     <div class="flag">
@@ -113,29 +118,30 @@ function userIncorrectAnswer() {
         <p class="answerResponse">Sorry, that's incorrect. The correct answer was ${correctAnswer}.</p>
         <button type=button class="continue">Continue</button>
     </div>`);
+    console.log(`'userIncorrectAnswer ran' ${questionNumber}`);
 }
 
 function endResults() {
-    console.log('endResults ran');
     $('.quizForm').html(`<div class="results correctResult">
         <p>You got ${correctNumber} right!</p>
         <p>Thank you for playing!</p>
         <button class="reset">Reset Quiz</button><div>`);
+        console.log(`'endResults ran' ${questionNumber}`);
 }
 
 function startOver() {
-    console.log('startOver ran');
     $('main').on('click', '.reset', function(e) {
         location.reload();
     });
+    console.log(`'startOver ran' ${questionNumber}`);
 }
 
 function makeQuiz() {
-    console.log('makeQuiz ran');
     startQuiz();
     renderQuestion();
     selectedAnswer();
     startNextQuestion();
+    console.log(`'makeQuiz ran' ${questionNumber}`);
 }
 
 $(makeQuiz);

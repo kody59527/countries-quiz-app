@@ -16,6 +16,12 @@ html {
     box-sizing: inherit;
 }
 
+
+body, h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}  
+
 .overlay {
     z-index: 1;
     height: 100%;
@@ -27,8 +33,14 @@ html {
     background: rgba(0, 0, 0, 0.7);
 }
 
+.overlay, div, html, a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .homeLink img {
-    display: block;
     width: 5%;
     height: 5%;
     margin: auto;
@@ -39,13 +51,11 @@ html {
 }
 
 button, .submitButton {
-    display: block;
     width: 80%;
     margin: auto;
 }
 
 .flag img {
-    display: block;
     width: 20%;
     height: 20%;
     margin: auto;
@@ -58,7 +68,6 @@ button, .submitButton {
 label {
     padding: 12px 30px;
     width: 100%;
-    display: block;
     text-align: center;
     overflow: hidden;
 }
@@ -75,11 +84,3 @@ fieldset {
 .quizForm {
     display: none;
 }
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}  
