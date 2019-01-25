@@ -1,5 +1,13 @@
 let questionNumber = 0;
 let correctNumber = 0;
+
+function highlightButton() {
+    console.log('highlightButton ran')
+    $('label.answerChoice').on('click', function() {
+        $('label.answerChoice').addClass('.selectedButton');
+    });
+}
+
 //creates the question from STORE
 function createQuestion() {
     if (questionNumber < STORE.length) {
@@ -30,7 +38,6 @@ function createQuestion() {
     } else {
         startOver();
         endResults();
-        questionNumber - 2;
         $('questionNumber').text(questionNumber);
     }
     console.log(`'createQuestion ran' ${questionNumber}`);
@@ -122,11 +129,26 @@ function userIncorrectAnswer() {
 }
 
 function endResults() {
-    $('.quizForm').html(`<div class="results correctResult">
-        <p>You got ${correctNumber} right!</p>
-        <p>Thank you for playing!</p>
-        <button class="reset">Reset Quiz</button><div>`);
-        console.log(`'endResults ran' ${questionNumber}`);
+    if (correctNumber <= 5) {
+        $('.quizForm').html(`<div class="results correctResult">
+            <p>You got ${correctNumber} right out of 10.</p>
+            <p>Ouch! Mulligan?</p>
+            <button class="reset">Reset Quiz</button>
+        <div>`);
+    } else if (correctNumber > 5 && correctNumber <= 9) {
+        $('.quizForm').html(`<div class="results correctResult">
+            <p>You got ${correctNumber} right out of 10.</p>
+            <p>Not bad at all!</p>
+            <button class="reset">Reset Quiz</button>
+        <div>`);
+    } else {
+        $('.quizForm').html(`<div class="results correctResult">
+            <p>You got ${correctNumber} right out of 10.</p>
+            <p>Amazing! Perfect score.</p>
+            <button class="reset">Reset Quiz</button>
+        <div>`);
+    }
+    console.log(`'endResults ran' ${questionNumber}`);
 }
 
 function startOver() {

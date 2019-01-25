@@ -16,11 +16,28 @@ html {
     box-sizing: inherit;
 }
 
+title {
+    display: none;
+}
+
+main {
+    height: 55%;
+}
 
 body, h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-}  
+    font-size: 20px;
+    margin: 0;
+}
+
+.questionTitle {
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+a:link, a:visited {
+    color: white;
+}
 
 .overlay {
     z-index: 1;
@@ -33,7 +50,7 @@ body, h1, h2, h3 {
     background: rgba(0, 0, 0, 0.7);
 }
 
-.overlay, div, html, a {
+* {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,18 +68,70 @@ body, h1, h2, h3 {
 }
 
 button, .submitButton {
-    width: 80%;
-    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    width: 150px;
+    padding: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border: none;
+    background-color: forestgreen;
+    border-radius: 5%;
+    color: white;
 }
 
+h1 {
+    margin-top: 10px;
+}
+
+button.buttonStart {
+    margin-top: 125px;
+}
+
+label.answerChoice {
+    display: block;
+    float: left;
+}
+
+input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  
+    border: 2px solid white;
+    transition: 0.3s;
+    outline: none;
+  }
+  
+  input[type='radio']:checked {
+    border: 8px solid white;
+  }
+
 .flag img {
-    width: 20%;
-    height: 20%;
+    width: 40%;
+    height: 40%;
     margin: auto;
+    margin-left: 40%;
+    margin-top: 20%;
 }
 
 .flag p {
     text-align: center;
+}
+
+p.answerResponse {
+    margin-left: 30px;
+    margin-top: 20%;
+}
+
+button.continue {
+    margin-left: 27%;
+    margin-top: 20%;
 }
 
 label {
@@ -72,15 +141,36 @@ label {
     overflow: hidden;
 }
 
-.counter ul {
+.counter ul, div {
     list-style-type: none;
-    text-align: center;
+    width: 90%;
+    display: block;
+    font-size: 16px;
+}
+
+.counter ul {
+    margin-left: 60px;
+    margin-top: 20px;
 }
 
 fieldset {
     border: none;
+    margin-left: 20px;
 }
 
 .quizForm {
     display: none;
+}
+
+.questionCounter, 
+.questionCounter span, 
+.correctCounter, 
+.correctCounter span {
+    display: inline;
+    text-align: center;
+}
+
+.correctCounter {
+    margin-left: 8px;
+    margin-top: 10px;
 }
