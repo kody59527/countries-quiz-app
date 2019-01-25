@@ -131,20 +131,20 @@ function userIncorrectAnswer() {
 function endResults() {
     if (correctNumber <= 5) {
         $('.quizForm').html(`<div class="results correctResult">
-            <p>You got ${correctNumber} right out of 10.</p>
-            <p>Ouch! Mulligan?</p>
+            <p class='resultParagraph'>You got ${correctNumber} right out of 10.</p>
+            <p class='resultParagraph'>Ouch! Mulligan?</p>
             <button class="reset">Reset Quiz</button>
         <div>`);
     } else if (correctNumber > 5 && correctNumber <= 9) {
         $('.quizForm').html(`<div class="results correctResult">
-            <p>You got ${correctNumber} right out of 10.</p>
-            <p>Not bad at all!</p>
+            <p class='resultParagraph'>You got ${correctNumber} right out of 10.</p>
+            <p class='resultParagraph'>Not bad at all!</p>
             <button class="reset">Reset Quiz</button>
         <div>`);
     } else {
         $('.quizForm').html(`<div class="results correctResult">
-            <p>You got ${correctNumber} right out of 10.</p>
-            <p>Amazing! Perfect score.</p>
+            <p class='resultParagraph'>You got ${correctNumber} right out of 10.</p>
+            <p class='resultParagraph'>Amazing! Perfect score.</p>
             <button class="reset">Reset Quiz</button>
         <div>`);
     }

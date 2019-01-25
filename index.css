@@ -31,7 +31,7 @@ body, h1, h2, h3 {
 }
 
 .questionTitle {
-    margin-top: 100px;
+    margin-top: 170px;
     margin-left: 20px;
 }
 
@@ -70,7 +70,7 @@ a:link, a:visited {
 button, .submitButton {
     font-family: 'Montserrat', sans-serif;
     width: 150px;
-    padding: 4%;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
@@ -81,7 +81,9 @@ button, .submitButton {
 }
 
 h1 {
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button.buttonStart {
@@ -113,11 +115,10 @@ input[type='radio'] {
   }
 
 .flag img {
-    width: 40%;
-    height: 40%;
+    width: 150px;
+    height: 80px;
     margin: auto;
-    margin-left: 40%;
-    margin-top: 20%;
+    margin-left: 70px;
 }
 
 .flag p {
@@ -126,22 +127,23 @@ input[type='radio'] {
 
 p.answerResponse {
     margin-left: 30px;
-    margin-top: 20%;
+    margin-top: 40px;
 }
 
-button.continue {
-    margin-left: 27%;
-    margin-top: 20%;
+button.continue, 
+button.reset {
+    margin-left: 70px;
+    margin-top: 40px;
 }
 
 label {
     padding: 12px 30px;
-    width: 100%;
     text-align: center;
     overflow: hidden;
 }
 
 .counter ul, div {
+    text-align: center;
     list-style-type: none;
     width: 90%;
     display: block;
@@ -149,13 +151,12 @@ label {
 }
 
 .counter ul {
-    margin-left: 60px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 fieldset {
     border: none;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .quizForm {
@@ -171,6 +172,10 @@ fieldset {
 }
 
 .correctCounter {
-    margin-left: 8px;
+    margin-left: 6px;
     margin-top: 10px;
+}
+
+.resultParagraph {
+    margin-left: 30px;
 }
