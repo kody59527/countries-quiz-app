@@ -12,23 +12,23 @@ function highlightButton() {
 function createQuestion() {
     if (questionNumber < STORE.length) {
         return `<div class='question${questionNumber}'>
-            <h2 class='questionTitle'>${STORE[questionNumber].question}</h2>
-            <form>
+            <h2 class='questionTitle' role='question'>${STORE[questionNumber].question}</h2>
+            <form role='form'>
                 <fieldset>
-                    <label class='answerChoice'>
-                        <input type='radio' value='${STORE[questionNumber].choices[0]}' name='choice' required>
+                    <label for='choice-1' class='answerChoice'>
+                        <input id='choice-1' type='radio' value='${STORE[questionNumber].choices[0]}' name='choice' required>
                         <span>${STORE[questionNumber].choices[0]}</span>
                     </label>
-                    <label class='answerChoice'>
-                        <input type='radio' value='${STORE[questionNumber].choices[1]}' name='choice' required>
+                    <label for='choice-1' class='answerChoice'>
+                        <input id='choice-1' type='radio' value='${STORE[questionNumber].choices[1]}' name='choice' required>
                         <span>${STORE[questionNumber].choices[1]}</span>
                     </label>
-                    <label class='answerChoice'>
-                        <input type='radio' value='${STORE[questionNumber].choices[2]}' name='choice' required>
+                    <label for='choice-1' class='answerChoice'>
+                        <input id='choice-1' type='radio' value='${STORE[questionNumber].choices[2]}' name='choice' required>
                         <span>${STORE[questionNumber].choices[2]}</span>
                     </label>
-                    <label class='answerChoice'>
-                        <input type='radio' value='${STORE[questionNumber].choices[3]}' name='choice' required>
+                    <label for='choice-1' class='answerChoice'>
+                        <input id='choice-1' type='radio' value='${STORE[questionNumber].choices[3]}' name='choice' required>
                         <span>${STORE[questionNumber].choices[3]}</span>
                     </label>
                     <input type='submit' class='submitButton' value='Submit'>
@@ -133,19 +133,19 @@ function endResults() {
         $('.quizForm').html(`<div class="results correctResult">
             <p class='resultParagraph'>You got ${correctNumber} right out of 10.</p>
             <p class='resultParagraph'>Ouch! Mulligan?</p>
-            <button class="reset">Reset Quiz</button>
+            <button class="reset" role='button'>Reset Quiz</button>
         <div>`);
     } else if (correctNumber > 5 && correctNumber <= 9) {
         $('.quizForm').html(`<div class="results correctResult">
             <p class='resultParagraph'>You got ${correctNumber} right out of 10.</p>
             <p class='resultParagraph'>Not bad at all!</p>
-            <button class="reset">Reset Quiz</button>
+            <button class="reset" role='button'>Reset Quiz</button>
         <div>`);
     } else {
         $('.quizForm').html(`<div class="results correctResult">
             <p class='resultParagraph'>You got ${correctNumber} right out of 10.</p>
             <p class='resultParagraph'>Amazing! Perfect score.</p>
-            <button class="reset">Reset Quiz</button>
+            <button role='button' class="reset">Reset Quiz</button>
         <div>`);
     }
     console.log(`'endResults ran' ${questionNumber}`);

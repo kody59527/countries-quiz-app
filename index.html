@@ -18,17 +18,17 @@
             <h1>Countries Quiz</h1>
             <div class='counter'>
                 <ul>
-                    <li class='questionCounter'>Question:  <span class='questionNumber'>0</span>/10</li>
-                    <li class='correctCounter'>Correct:  <span class='correctNumber'>0</span>/10</li>
+                    <li class='questionCounter' role='currentQuestion'>Question:  <span class='questionNumber'>0</span>/10</li>
+                    <li class='correctCounter' role='score'>Correct:  <span class='correctNumber'>0</span>/10</li>
                 </ul>
             </div>
         </header>
         <main role='main'>
-            <div class='homePage'>
+            <div class='homePage' role='description'>
                 <h1 class='homeDescription'>Quiz yourself on interesting facts about various countries in the world!</h1>
-                <button type='button' class='buttonStart'>Start Quiz</button>
+                <button type='button' class='buttonStart' role='button'>Start Quiz</button>
             </div>
-            <div class='quizForm'></div>
+            <div class='quizForm' role='form'></div>
         </main>
         </div>
     </body>
